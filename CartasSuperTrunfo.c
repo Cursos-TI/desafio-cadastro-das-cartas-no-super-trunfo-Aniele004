@@ -27,7 +27,7 @@ int main() {
     printf("Código da Carta (ex.:A01): ");
     scanf("%s", codigo);
     printf("Nome da Cidade: ");
-    scanf("%s", nomeDaCidade);
+    scanf(" %[^\n]", nomeDaCidade);
     printf("População: ");
     scanf("%lu", &populacao);
     printf("Área: ");
@@ -62,7 +62,7 @@ int main() {
     printf("Código da Carta (ex.:A01): ");
     scanf("%s", codigo2);
     printf("Nome da Cidade: ");
-    scanf("%s", nomeDaCidade2);
+    scanf(" %[^\n]", nomeDaCidade2);
     printf("População: ");
     scanf("%lu", &populacao2);
     printf("Área: ");
@@ -109,6 +109,8 @@ int main() {
 
    printf("\n");
    printf("_________________________\n");
+   printf("\n");
+
    // Comparação das cartas
 
    printf("Comparação de Cartas:\n");
@@ -119,5 +121,24 @@ int main() {
    printf("Densidade Populacional: Carta 1 venceu (%d)\n", densidade_populacional < densidade_populacional2);
    printf("PiB per Capita: Carta 1 venceu (%d)\n", pib_per_capita > pib_per_capita2);
    printf("Super Poder: Carta 1 venceu (%d)\n", superPoder > superPoder2);
-    return 0;
+
+   printf("\n");
+   //Declaração clara de vencedor
+
+   printf("Determinação de vencedor (Atributo: População)\n");
+   printf("Carta 1 - %s: %lu\n", nomeDaCidade, populacao);
+   printf("Carta 2 - %s: %lu\n", nomeDaCidade2, populacao2);
+
+   printf("\n");
+
+   if(populacao > populacao2){
+        printf("Carta 1 (%s) venceu!\n", nomeDaCidade);
+   }else if (populacao < populacao2){
+        printf("Carta 2 (%s) venceu!\n", nomeDaCidade2);
+   } else{
+        printf("Empate!\n");
+
+   }
+   
+   return 0;
 }
